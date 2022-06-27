@@ -32,6 +32,7 @@ class MyApp(QWidget) :
         self.hbox.addWidget(self.btnOff)
 
         self.vbox.addLayout(self.hbox)
+        
 
         self.show()
 
