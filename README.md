@@ -29,6 +29,10 @@ EMS 데이터 통신 및 제어프로그램
   - Naver News 검색
   - Naver Movie 검색
 
+## Day 5 ~ 7
+- EMS 통신앱 개발
+  - MQTT
+
 <br />
 
 ![네이버 뉴스](https://raw.githubusercontent.com/LKBbb/ems_comm/main/capture/naver_news.png)
