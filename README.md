@@ -37,6 +37,4 @@ EMS 데이터 통신 및 제어프로그램
 
 ![네이버 영화](https://raw.githubusercontent.com/LKBbb/ems_comm/main/capture/naver_movie.png)
 
-네이버 
-
-
+네이버 영화 검색 앱
