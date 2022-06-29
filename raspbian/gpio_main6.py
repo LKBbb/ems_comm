@@ -1,4 +1,7 @@
 # Servo Motor test
+# Orange PWM = 오른쪽 6
+# Red Vcc = 오른쪽 1
+# Brown Ground = 오른쪽 3 
 import RPi.GPIO as GPIO
 import time
 

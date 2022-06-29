@@ -1,4 +1,6 @@
 # PUSHBUTTON RGB LED Control
+# - -> 오른쪽 3
+# R,G,B -> 왼쪽 10, 11 , 12
 import RPi.GPIO as GPIO
 import time
 
