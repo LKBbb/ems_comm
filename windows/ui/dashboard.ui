@@ -290,6 +290,56 @@ border:none;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QFrame" name="connFrame">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>440</y>
+        <width>24</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/red);
+background-repeat:no-repeat;
+border:none;
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblStatus">
+      <property name="geometry">
+       <rect>
+        <x>52</x>
+        <y>431</y>
+        <width>120</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>나눔고딕코딩</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(210, 210, 210);
+border:none;</string>
+      </property>
+      <property name="text">
+       <string>Disconnected</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QFrame" name="tempFrame">
      <property name="geometry">
@@ -426,17 +476,51 @@ border:none;</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QDial" name="dial">
+     <widget class="QPushButton" name="btnTempAlarm">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>285</y>
-        <width>201</width>
-        <height>181</height>
+        <x>210</x>
+        <y>320</y>
+        <width>48</width>
+        <height>48</height>
        </rect>
       </property>
-      <property name="notchesVisible">
-       <bool>true</bool>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;
+background-image: url(:/alarm);
+background-repeat:no-repeat;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTempAlarm">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>280</y>
+        <width>190</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>나눔고딕코딩</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+border:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -575,17 +659,109 @@ color: rgb(108, 191, 248);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QDial" name="dial_2">
+     <widget class="QPushButton" name="btnHumidAlarm">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>285</y>
-        <width>201</width>
-        <height>181</height>
+        <x>210</x>
+        <y>316</y>
+        <width>48</width>
+        <height>48</height>
        </rect>
       </property>
-      <property name="notchesVisible">
-       <bool>true</bool>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;
+background-image: url(:/alarm);
+background-repeat:no-repeat;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblHumidAlarm">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>260</y>
+        <width>190</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>나눔고딕코딩</family>
+        <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+border:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="chartFrame">
+     <property name="geometry">
+      <rect>
+       <x>782</x>
+       <y>92</y>
+       <width>391</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>나눔고딕코딩</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 50, 115);
+border-style:outset;
+border-width:5px;
+border-color: rgb(0, 50, 180);
+border-radius:10px;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblChart">
+      <property name="geometry">
+       <rect>
+        <x>228</x>
+        <y>9</y>
+        <width>150</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>나눔고딕코딩</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+border:none;</string>
+      </property>
+      <property name="text">
+       <string>Visualization</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
     </widget>
