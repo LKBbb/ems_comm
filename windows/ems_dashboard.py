@@ -14,6 +14,7 @@ import dashboard_rc # 리소스 py파일 추가
 import paho.mqtt.client as mqtt
 import time
 import pymysql
+import datetime as dt
 
 apikey = '4a8801006868cc69e65350b6be9b2138'
 broker_url = '127.0.0.1' # 로컬에 MQTT Broker가 같이 설치되어 있으므로 127.0.0.1
@@ -54,6 +55,7 @@ class Worker(QThread) :
         self.client.loop_forever()
 
 class MyApp(QMainWindow) :
+
     
     def __init__(self) :
         super(MyApp, self).__init__()
@@ -162,10 +164,24 @@ class MyApp(QMainWindow) :
         # Widget Signal 정의
         self.btnTempAlarm.clicked.connect(self.btnTempAlarmClicked)
         self.btnHumidAlarm.clicked.connect(self.btnHumidAlarmClicked)
+        self.btnTempStop.clicked.connect(self.btnTempStopClicked)
+        self.btnHumidStop.clicked.connect(self.btnHumidStopClicked)
         self.show()
-    
+    def btnTempStopClicked (self) :
+        pass
+    def btnHumidStopClicked(self) :
+        pass
+
     def btnTempAlarmClicked(self) :
         QMessageBox.information(self, '알람', '이상온도로 냉방 가동')
+        self.client = mqtt.Client(client_id = 'Controller')
+        self.client.connect(broker_url, 1883)
+        curr = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        origin_data = {'DEV_ID' : 'DASHBOARD', 'CURR_DT' : curr,
+                       'TYPE' : 'AIRCON', 'STAT' : 'ON'}
+        pub_data = json.dumps(origin_data)
+        self.client.publish(topic = 'ems/rasp/control/', payload = pub_data)
+        print('AIRCON On Published')
 
     def btnHumidAlarmClicked(self) :
         QMessageBox.information(self, '알람', '이상습도로 제습 가동')

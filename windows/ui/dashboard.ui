@@ -479,8 +479,8 @@ border:none;</string>
      <widget class="QPushButton" name="btnTempAlarm">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>320</y>
+        <x>142</x>
+        <y>330</y>
         <width>48</width>
         <height>48</height>
        </rect>
@@ -521,6 +521,25 @@ border:none;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnTempStop">
+      <property name="geometry">
+       <rect>
+        <x>213</x>
+        <y>330</y>
+        <width>48</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;
+background-image: url(:/stop);
+background-repeat:no-repeat;
+</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -662,8 +681,8 @@ color: rgb(108, 191, 248);</string>
      <widget class="QPushButton" name="btnHumidAlarm">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>316</y>
+        <x>144</x>
+        <y>330</y>
         <width>48</width>
         <height>48</height>
        </rect>
@@ -704,6 +723,25 @@ border:none;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnHumidStop">
+      <property name="geometry">
+       <rect>
+        <x>215</x>
+        <y>330</y>
+        <width>48</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-style: none;
+background-image: url(:/stop);
+background-repeat:no-repeat;
+</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
