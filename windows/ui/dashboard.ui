@@ -498,9 +498,9 @@ background-repeat:no-repeat;
      <widget class="QLabel" name="lblTempAlarm">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>280</y>
-        <width>190</width>
+        <x>10</x>
+        <y>270</y>
+        <width>250</width>
         <height>40</height>
        </rect>
       </property>
@@ -700,9 +700,9 @@ background-repeat:no-repeat;
      <widget class="QLabel" name="lblHumidAlarm">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>260</y>
-        <width>190</width>
+        <x>10</x>
+        <y>270</y>
+        <width>250</width>
         <height>40</height>
        </rect>
       </property>
@@ -749,7 +749,7 @@ background-repeat:no-repeat;
      <property name="geometry">
       <rect>
        <x>782</x>
-       <y>92</y>
+       <y>93</y>
        <width>391</width>
        <height>481</height>
       </rect>
@@ -778,7 +778,7 @@ border-radius:10px;</string>
       <property name="geometry">
        <rect>
         <x>228</x>
-        <y>9</y>
+        <y>10</y>
         <width>150</width>
         <height>40</height>
        </rect>
@@ -802,10 +802,32 @@ border:none;</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
+     <widget class="QChartView" name="dataView" native="true">
+      <property name="geometry">
+       <rect>
+        <x>13</x>
+        <y>50</y>
+        <width>370</width>
+        <height>420</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(244, 244, 244);
+border-width : 2px;</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header>PyQt5.QtChart</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="dashboard.qrc"/>
  </resources>
