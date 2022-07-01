@@ -23,7 +23,7 @@ class publisher(Thread):
         self.host = '192.168.0.13' 
         self.port = 1883
         print('publisher 스레드 시작')
-        self.client = mqtt.Client(client_id='EMS01')
+        self.client = mqtt.Client(client_id='EMS04')
 
     def run(self):
         self.client.connect(self.host, self.port)
@@ -34,7 +34,7 @@ class publisher(Thread):
             t = SENSOR.temperature
             h = SENSOR.humidity
             curr = dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            origin_data = { 'DEV_ID' : 'EMS01', 'CURR_DT' : curr,
+            origin_data = { 'DEV_ID' : 'EMS04', 'CURR_DT' : curr,
                             'TEMP' : t, 'HUMID' : h }
             pub_data = json.dumps(origin_data)
             self.client.publish(topic='ems/rasp/data/',
@@ -66,9 +66,9 @@ class subscriber(Thread):
             GPIO.output(RED, GPIO.HIGH)
         elif type == 'AIRCON' and stat == 'OFF' :
             GPIO.output(RED, GPIO.LOW)
-        if type == 'STAT' and stat == 'ON' :
+        elif type == 'HUMID' and stat == 'ON' :
             GPIO.output(BLUE, GPIO.HIGH)
-        elif type == 'STAT' and stat == 'OFF' :
+        elif type == 'HUMID' and stat == 'OFF' :
             GPIO.output(BLUE, GPIO.LOW)
         # print(data['TYPE'])
         # print(data['STAT'])
